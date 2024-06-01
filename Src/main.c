@@ -18,11 +18,17 @@
 
 #include <stdint.h>
 #include <Stm32f303xx.h>
+#include "Gpio.h"
+
+GPIO_Handle_t pGPIOA_handler;
 
 
 
 int main(void)
 {
+	pGPIOA_handler.pGpiox = GPIOA;
+	GPIO_Clock_Control(&pGPIOA_handler, 1);
+	GPIO_Clock_Control(&pGPIOA_handler, 0);
     /* Loop forever */
-	for(;;);
+	//for(;;);
 }
